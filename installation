@@ -1,0 +1,40 @@
+
+
+- laravel new shopping-list
+- valet link (if you have valet) - php artisan serve if you don't have.
+
+- Install vue 3
+- npm install --save vue@next && npm install --save-dev vue-loader@next
+- webpack.min.js add .vue()
+- Add ExampleComponent.vue 
+- Create App Vue
+-------------------------------
+	import { createApp } from 'vue'
+	import HelloWorld from './components/Welcome'
+
+	const app = createApp({})
+
+	app.component('hello-world', HelloWorld)
+
+	app.mount('#app')
+--------------------------------
+- Create app.blade.php and make a html body !
+- add mix('js/app.js') in using script src.
+- call example-component
+- add div with id app
+- call app in web.php
+
+Add tailwind
+- npm install -D tailwindcss postcss autoprefixer
+- npx tailwindcss init
+-  require("tailwindcss") in webpack.min.js
+- content: [
+    "./resources/**/*.blade.php",
+    "./resources/**/*.js",
+    "./resources/**/*.vue",
+  ], add in tailwind.config.js
+- add in resources/app.css
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+-  <link href="{{ asset('css/app.css') }}" rel="stylesheet"> add in blade file
